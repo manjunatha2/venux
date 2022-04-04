@@ -1,21 +1,21 @@
 import React from "react";
 
-interface PokemonType {
+export interface PokemonType {
   name: string;
-  id: string;
+  url: string;
 }
 
-interface HomeProps {
+export interface PokemonList {
   pokemonList: Array<PokemonType>;
 }
 
-const HomeComponent = (props: HomeProps) => {
+const HomeComponent = (props: PokemonList) => {
   const { pokemonList } = props;
 
   return (
     <div>
       {pokemonList?.map((item: PokemonType) => {
-        <div key={item.id}>
+        <div key={item.url}>
           <div>{item.name}</div>
         </div>;
       })}
