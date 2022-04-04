@@ -18,7 +18,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <HomeComponent pokemonList={pokemonList} />
+        {/* <HomeComponent pokemonList={pokemonList} /> */}
+        Home Component
       </main>
     </div>
   );
