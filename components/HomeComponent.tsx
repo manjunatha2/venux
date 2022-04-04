@@ -14,11 +14,11 @@ const HomeComponent = (props: PokemonList) => {
 
   return (
     <div>
-      {pokemonList?.map((item: PokemonType) => {
+      {pokemonList?.map((item: PokemonType) => (
         <div key={item.url}>
           <div>{item.name}</div>
-        </div>;
-      })}
+        </div>
+      ))}
     </div>
   );
 };
