@@ -3,20 +3,13 @@ import Head from "next/head";
 import Image from "next/image";
 import HomeComponent from "../components/HomeComponent";
 import { PokemonType, PokemonList } from "../components/HomeComponent";
+import { GetServerSideProps } from "next";
 
 interface Props {
-  results: Array<PokemonType>;
+  pokemons: Array<PokemonType>;
 }
 
-const Home: NextPage<Props> = ({ results }) => {
-  console.log("🚀 ~ file: index.tsx ~ line 9 ~ props", results);
-  const pokemonList = [
-    { name: "Bulbosure", url: "a" },
-    { name: "Bulbosure", url: "b" },
-  ];
-
-  // const { results } = props;
-
+const Home: NextPage<Props> = ({ pokemons }) => {
   return (
     <div>
       <Head>
@@ -25,21 +18,19 @@ const Home: NextPage<Props> = ({ results }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HomeComponent pokemonList={pokemonList} />
+      <HomeComponent pokemonList={pokemons} />
     </div>
   );
 };
 
-Home.getInitialProps = async (ctx) => {
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon");
-
-  const json = await res.json();
-  console.log(
-    "🚀 ~ file: index.tsx ~ line 40 ~ Home.getInitialProps= ~ json",
-    json.results
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const res = await fetch(
+    "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20"
   );
 
-  return { results: json.results };
+  const json = await res.json();
+
+  return { props: { pokemons: json.results } };
 };
 
 export default Home;
