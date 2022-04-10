@@ -1,0 +1,51 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    justify-content: space-between;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1rem 3rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.card h2{
+    margin: 0 auto;
+    color: grey;
+}
+.card p{
+    margin: 0 auto;
+}
+.char{
+    display: flex;
+    flex-direction: row;
+}
+.char h3{
+    margin: 5px;
+}
+.prop{
+    display: flex;
+    flex-direction: row;
+}
+.prop h4{
+    margin: 4px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.info2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.props{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

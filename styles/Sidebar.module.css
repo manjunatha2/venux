@@ -1,0 +1,22 @@
+.main{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 200px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+.type{
+    background-color: rgba(128, 128, 128, 0.256);
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0.5rem 1.2rem;
+}
